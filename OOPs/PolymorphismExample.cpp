@@ -1,11 +1,12 @@
 #include <iostream>
+// Using Namespace std means that the namespace std and the related classes and functionalities will be available directly
 using namespace std;
 // In C++, polymorphism is a core concept of object-oriented programming that allows objects of different classes to be treated as objects of a common base class.
 class Animal
 {
 private:
     double limbs;
-    std::string name;
+    string name;
 
 public:
     // A method that could be overridden has to be declared with the keyword "virtual"
@@ -22,17 +23,17 @@ public:
     {
         return this->limbs;
     }
-    void setName(std::string name)
+    void setName(string name)
     {
         this->name = name;
     }
-    std::string getName()
+    string getName()
     {
         return this->name;
     }
-    virtual std::string getDescription()
+    virtual string getDescription()
     {
-        return this->name + " has " + std::to_string(this->limbs) + " limbs";
+        return this->name + " has " + to_string(this->limbs) + " limbs";
     }
 };
 
@@ -49,8 +50,9 @@ public:
     {
         Animal::setLimbs(limbs);
     }
-    std::string getDescription(){
-        return "Dog: "+ Animal::getDescription();
+    string getDescription()
+    {
+        return "Dog: " + Animal::getDescription();
     }
 };
 
@@ -61,8 +63,9 @@ public:
     {
         cout << "The cat meows." << endl;
     }
-    std::string getDescription(){
-        return "Cat: "+ Animal::getDescription();
+    string getDescription()
+    {
+        return "Cat: " + Animal::getDescription();
     }
 };
 
@@ -75,11 +78,11 @@ int main()
     animal2->makeSound(); // Output: The cat meows.
     animal1->setLimbs(4);
     animal2->setLimbs(3);
-    std::cout << animal1->getLimbs() << std::endl;
+    cout << animal1->getLimbs() << endl;
     animal1->setName("Johnny");
     animal2->setName("Bob");
-    std::cout << animal1->getDescription() << std::endl;
-    std::cout << animal2->getDescription() << std::endl;
+    cout << animal1->getDescription() << endl;
+    cout << animal2->getDescription() << endl;
 
     // 'delete' keyword is used to delete the reference to the variable from the memory and release the resources allocated by the instance
     delete animal1;
