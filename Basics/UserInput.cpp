@@ -1,16 +1,16 @@
 #include <iostream>
-
+using namespace std;
 int main()
 {
     int number;
 
-    std::cout << "Enter a number: ";
-    std::cin >> number;
+    cout << "Enter a number: ";
+    cin >> number;
 
-    std::cout << "Number table for " << number << ":\n";
+    cout << "Number table for " << number << ":\n";
     for (int i = 1; i <= 10; ++i)
     {
-        std::cout << number << " x " << i << " = " << (number * i) << std::endl;
+        cout << number << " x " << i << " = " << (number * i) << endl;
     }
 
     return 0;

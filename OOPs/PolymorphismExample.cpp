@@ -1,5 +1,5 @@
 #include <iostream>
-// Using Namespace std means that the namespace std and the related classes and functionalities will be available directly
+// The using keyword is used to introduce a name into the current scope, typically to simplify the usage of namespaces or to create type aliases.
 using namespace std;
 // In C++, polymorphism is a core concept of object-oriented programming that allows objects of different classes to be treated as objects of a common base class.
 class Animal

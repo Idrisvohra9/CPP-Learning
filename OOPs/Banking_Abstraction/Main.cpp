@@ -1,58 +1,59 @@
 #include "Account.h"
 #include <iostream>
 #include <string>
+using namespace std;
 
 int main() {
-    std::string accountNumber;
+    string accountNumber;
     double initialBalance;
 
-    std::cout << "Enter account number: ";
-    std::cin >> accountNumber;
+    cout << "Enter account number: ";
+    cin >> accountNumber;
 
-    std::cout << "Enter initial balance: $";
-    std::cin >> initialBalance;
+    cout << "Enter initial balance: $";
+    cin >> initialBalance;
 
     Account *myAccount = new Account(accountNumber, initialBalance);
 
-    std::cout << "Account Number: " << myAccount->getAccountNumber() << std::endl;
-    std::cout << "Initial Balance: $" << myAccount->getBalance() << std::endl;
+    cout << "Account Number: " << myAccount->getAccountNumber() << endl;
+    cout << "Initial Balance: $" << myAccount->getBalance() << endl;
 
     char choice;
     double amount;
 
     do {
-        std::cout << "\nChoose an action:" << std::endl;
-        std::cout << "1. Deposit" << std::endl;
-        std::cout << "2. Withdraw" << std::endl;
-        std::cout << "3. Check Balance" << std::endl;
-        std::cout << "4. Exit" << std::endl;
-        std::cout << "Enter your choice (1-4): ";
-        std::cin >> choice;
+        cout << "\nChoose an action:" << endl;
+        cout << "1. Deposit" << endl;
+        cout << "2. Withdraw" << endl;
+        cout << "3. Check Balance" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice (1-4): ";
+        cin >> choice;
 
         switch (choice) {
             case '1':
-                std::cout << "Enter deposit amount: $";
-                std::cin >> amount;
+                cout << "Enter deposit amount: $";
+                cin >> amount;
                 myAccount->deposit(amount);
-                std::cout << "Balance after deposit: $" << myAccount->getBalance() << std::endl;
+                cout << "Balance after deposit: $" << myAccount->getBalance() << endl;
                 break;
             case '2':
-                std::cout << "Enter withdrawal amount: $";
-                std::cin >> amount;
+                cout << "Enter withdrawal amount: $";
+                cin >> amount;
                 if (myAccount->withdraw(amount)) {
-                    std::cout << "Balance after withdrawal: $" << myAccount->getBalance() << std::endl;
+                    cout << "Balance after withdrawal: $" << myAccount->getBalance() << endl;
                 } else {
-                    std::cout << "Withdrawal failed due to insufficient funds." << std::endl;
+                    cout << "Withdrawal failed due to insufficient funds." << endl;
                 }
                 break;
             case '3':
-                std::cout << "Current Balance: $" << myAccount->getBalance() << std::endl;
+                cout << "Current Balance: $" << myAccount->getBalance() << endl;
                 break;
             case '4':
-                std::cout << "Exiting program." << std::endl;
+                cout << "Exiting program." << endl;
                 break;
             default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
+                cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != '4');
 
